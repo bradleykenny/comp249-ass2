@@ -1,0 +1,238 @@
+/* CSS Stylesheet for the COMP249 Jobs Board */
+/* Author: Bradley Kenny / 45209723          */
+
+/*
+COLOUR SCHEME:
+ - BLUE: #4834d4
+ - GREEN: #6ab04c
+ - RED: #eb4d4b
+ - YELLOW: #f9ca24
+ - PURPLE: #be2edd
+ - TEAL: #22a6b3
+*/
+
+/* ======== COMMON ELEMENTS ======== */
+
+html {
+    background-color: #efefef;
+    font-family: 'Arial';
+}
+
+body {
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 150px;
+}
+
+p {
+    margin: 0px 0px;
+    /* text-align: center; */
+}
+
+a {
+    color: #4834d4;
+    text-decoration: none;
+}
+
+hr {
+	margin: 15px auto;
+	border: 1px solid #cdcdcd;
+}
+
+/* ======== NAVIGATION BAR / LOGO ======== */
+
+nav {
+    background-color: #4834d4;
+    width: 100%;
+    padding: 5px 0px;
+    position: fixed;
+
+    box-shadow: 0px 5px 20px darkgrey;
+}
+
+nav h1 {
+    font-size: 36px;
+    color: white;
+    text-align: left;
+    margin: 0px;
+    margin-top: 2px;
+    margin-left: 50px;
+    padding: 0px;
+    font-weight: normal;
+    cursor: pointer;
+    display: inline-block;
+}
+
+nav a {
+	color: white;
+	text-decoration: none;
+}
+
+
+.job_logo {
+    font-family: 'Merriweather';
+}
+
+.board_logo {
+    font-family: 'Grand Hotel';
+    font-size: 48px;
+    /* color: #4834d4; */
+    /* letter-spacing: -3px; */
+}
+
+nav ul {
+    float: right;
+    margin: 25px 50px 25px 0px;
+    display: inline;
+}
+
+nav ul a {
+    padding: 10px 15px;
+    margin-left: 8px;
+
+    background-color: rgba(255,255,255,0.2);
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+
+    border-radius: 5px;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+}
+
+nav ul a:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+
+/* ======== MAIN ======== */
+
+#container {
+    width: 90%;
+    height: 1000px;
+
+    margin-top: 75px;
+    padding: 25px 5%;
+    float: left;
+}
+
+#container h1 {
+    text-align: center;
+    font-family: 'Pacifico';
+    font-weight: normal;
+    font-size: 50px;
+    color: #333;
+
+    margin-bottom: 30px;
+}
+
+#container input[type='text'] {
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    box-shadow: 0px 5px 30px grey;
+
+    margin: auto 22.5% 100px;
+    /* padding: 20px 7.5% 20px 30px; */
+    padding: 20px 2.5%;
+    width: 50%; /* change to 42.5% if padding = 7.5% */
+    font-size: 16px;
+}
+
+/* JOB CARDS */
+
+.card {
+    background-color: white;
+    width: 40%;
+    margin: auto 27.5% 40px;
+    padding: 25px 2.5%;
+    box-shadow: 0px 5px 20px grey;
+    border-radius: 5px;
+}
+.jobtitle {
+    font-weight: bold;
+    color: #4834d4;
+    cursor: pointer;
+	padding-bottom: 5px;
+}
+
+.company {
+    font-weight: bold;
+}
+
+.company img, .location img, .time img, .user img {
+    margin-right: 3px;
+    margin-top: 5px;
+    height: 12px;
+}
+
+.location, .time {
+    /* font-style: italic; */
+}
+
+.card div {
+    margin: 0px auto;
+}
+
+.card .description {
+    margin-top: 5px;
+	text-align: left;
+}
+
+.card .button {
+	margin: auto auto;
+    margin-top: 15px;
+    padding: 10px;
+	display: block;
+
+    background-color: transparent;
+    outline: none;
+    border: 3px #cdcdcd solid;
+
+    font-size: 14px;
+	text-align: center;
+    color: #595959;
+
+    cursor: pointer;
+}
+
+.card .button:hover {
+    background-color: #cdcdcd;
+    color: #fff;
+}
+
+/* ======== ABOUT ======== */
+
+.aboutImg {
+    width: 110%;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.aboutImg:first-child {
+    margin-left: -5%;
+    border-radius: 5px 5px 0px 0px;
+    float: left;
+}
+
+.aboutImg:last-child {
+    float: right;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    margin-right: -5%;
+    border-radius: 0px;
+}
+
+#aboutCard {
+    text-align: justify;
+    padding: 0px 2% 2.5%;
+}
+
+.aboutH2 {
+    font-family: 'Merriweather';
+    text-align: center;
+}
+
+.mainPageCard .description p, .card .description h2 {
+	font-size: 16px;
+	text-align: justify;
+}

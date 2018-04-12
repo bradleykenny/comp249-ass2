@@ -1,0 +1,29 @@
+% rebase('base.html')
+<h1>{{message}}</h1>
+
+<!-- <h1 style="font-size: 20px; font-family: 'Merriweather';">MOST RECENT JOBS</h1> -->
+% if positions:
+	<div class="card">
+	    <div class="jobtitle">{{ !positions[3] }}</div>
+		<div class="user">
+		   <img src="../static/img/user.png"/>
+		   {{ !positions[2] }}
+	   </div>
+	    <div class="company">
+	        <img src="../static/img/company.png"/>
+	        {{ !positions[5] }}
+	    </div>
+	    <div class="location">
+	        <img src="../static/img/location.png"/>
+	        {{ !positions[4] }}
+	    </div>
+		<div class="time">
+	        <img src="../static/img/time.png"/>
+	        {{ !positions[1] }}
+	    </div>
+		<hr>
+	    <div class="description">
+	        {{ !positions[6] }}
+	    </div>
+	</div>
+% end

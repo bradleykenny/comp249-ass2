@@ -1,0 +1,87 @@
+% rebase('base.html')
+<h1>{{message}}</h1>
+
+<input type="text" placeholder="Type some words about the job you want..."></input>
+<!-- DO SEARCH BUTTON HERE -->
+<!-- <button>Search</button> -->
+
+<h1 style="font-size: 20px; font-family: 'Merriweather';">SUGGESTED JOBS</h1>
+<!-- EXAMPLE JOB -->
+<div class="card">
+    <div class="jobtitle">Junior Software Engineer</div>
+    <div class="company">
+        <img src="static/img/company.png"/>
+        SXY Software
+    </div>
+    <div class="location">
+        <img src="static/img/location.png"/>
+        Sydney, NSW
+    </div>
+    <div class="description">
+        SXY Software is a leading provider of innovative software solutions for the
+        Global Pasta industry. We are currently seeking a Junior Software Engineer to...
+    </div>
+    <button>READ MORE</button>
+</div>
+
+<!-- JOB #3 -->
+<div class="card">
+    <div class="jobtitle">Junior Software Engineer - Flight Management</div>
+    <div class="company">
+        <img src="static/img/company.png"/>
+        Ansett Airlines
+    </div>
+    <div class="location">
+        <img src="static/img/location.png"/>
+        Pyrmont, NSW
+    </div>
+    <div class="description">
+        Coordinating product development between several impacted developers across various
+        Ansett sites. Experience as software developer in C++ in a Linux...
+    </div>
+    <button>READ MORE</button>
+</div>
+
+<!-- JOB #4 -->
+<div class="card">
+    <div class="jobtitle">Junior Full Stack Developer</div>
+    <div class="company">
+        <img src="static/img/company.png"/>
+        Power People
+    </div>
+    <div class="location">
+        <img src="static/img/location.png"/>
+        Macquarie Park, NSW
+    </div>
+    <div class="description">
+        As a Junior Full Stack Developer, you will report into the Lead Developer in
+        an Agile team and contribute to the development of world leading...
+    </div>
+    <button>SEE MORE</button>
+</div>
+
+
+<h1 style="font-size: 20px; font-family: 'Merriweather';">MOST RECENT JOBS</h1>
+% if positions:
+    % for position in positions:
+	<div class="card mainPageCard">
+	    <div class="jobtitle">{{ !position[3] }}</div>
+	    <div class="company">
+	        <img src="static/img/company.png"/>
+	        {{ !position[5] }}
+	    </div>
+	    <div class="location">
+	        <img src="static/img/location.png"/>
+	        {{ !position[4] }}
+	    </div>
+	    <div class="description">
+	        {{ !position[6][0:250] }}...
+	    </div>
+		<br>
+		<div class="description">
+	        {{ !position[1] }}
+	    </div>
+	    <a class="button" href="/positions/{{ !position[0] }}">Read More</a>
+	</div>
+    % end
+% end
