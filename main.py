@@ -9,6 +9,7 @@ app = Bottle()
 def static(filename):
     return static_file(filename=filename, root='static')
 
+
 @app.route('/')
 def index(db):
     info = {
@@ -18,6 +19,7 @@ def index(db):
     }
     return template('index', info)
 
+
 @app.route('/about/')
 def about():
     info = {
@@ -25,6 +27,7 @@ def about():
         'message': 'About Us',
     }
     return template('about.html', info)
+
 
 @app.route('/positions/<id>')
 def positions(db, id):
