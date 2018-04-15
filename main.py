@@ -14,7 +14,6 @@ def index(db):
     info = {
         'title': 'Welcome to Jobs',
         'message': 'Welcome to Jobs',
-        # TODO: find a better way
         'positions': position_list(db),
     }
     return template('index', info)
@@ -30,10 +29,9 @@ def about():
 @app.route('/positions/<id>')
 def positions(db, id):
 	info = {
-        'title': 'Jobs | %s' % position_get(db,int(id))[3],
+        'title': 'Jobs | %s' % position_get(db, int(id))[3],
         'message': 'Your next job?',
-        # TODO: find a better way
-        'positions': position_get(db,int(id)),
+        'positions': position_get(db, int(id)),
     }
 	return template('position.html', info)
 

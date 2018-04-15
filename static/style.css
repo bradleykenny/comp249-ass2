@@ -236,3 +236,9 @@ nav ul a:hover {
 	font-size: 16px;
 	text-align: justify;
 }
+
+#recog {
+	padding-bottom: 50px;
+	text-align: center;
+    color: #565656;
+}
