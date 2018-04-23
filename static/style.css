@@ -96,12 +96,47 @@ nav ul a {
     text-decoration: none;
     font-size: 14px;
 
+	text-transform: uppercase;
+
     /* border-radius: 5px; */
     /* border-bottom: 2px solid rgba(0,0,0,0.2); */
 }
 
 nav ul a:hover {
     border-bottom: 2px solid white;
+}
+
+nav form {
+	float: right;
+    margin: 20px 50px 20px 0px;
+    display: inline;
+}
+
+nav form input[type="text"], nav form input[type="password"] {
+	margin-left: 7.5px;
+	padding: 7.5px 10px;
+
+	width: 100px;
+
+	outline: none;
+	border: none;
+	border-radius: 3px;
+
+	font-size: 14px;
+}
+
+nav form input[type="button"] {
+	margin-left: 7.5px;
+	padding: 7.5px 15px;
+
+	outline: none;
+	border: none;
+	border-radius: 3px;
+
+	background-color: rgba(255,255,255,0.25);
+	color: white;
+	font-size: 14px;
+	text-transform: uppercase;
 }
 
 /* ======== MAIN ======== */
@@ -179,24 +214,28 @@ nav ul a:hover {
 }
 
 .card .button {
-	margin: auto auto;
-    margin-top: 15px;
-    padding: 10px;
+	/* margin: auto auto; */
+    margin-top: 10px;
+    padding: 10px 7px;
 	display: block;
+	width: 100px;
 
-    background-color: transparent;
+    background-color: #4834d4;
     outline: none;
-    border: 3px #cdcdcd solid;
+    /* border: 3px #cdcdcd solid; */
+	border-radius: 3px;
 
     font-size: 14px;
 	text-align: center;
-    color: #595959;
+    color: #fff;
 
     cursor: pointer;
+
+	text-transform: uppercase;
 }
 
 .card .button:hover {
-    background-color: #cdcdcd;
+    background-color: #4834d4;
     color: #fff;
 }
 
