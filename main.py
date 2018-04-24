@@ -43,18 +43,25 @@ def positions(db, id):
 	return template('position.html', info)
 
 
-@app.route('/login/', method="POST")
-def formhandler(db):
+@app.route('/login', method="POST")
+def login(db):
 	nick = request.forms.get('nick')
 	password = request.forms.get('password')
 	if check_login(db, nick, password):
 		generate_session(db, nick)
-		return redirect('/', nick=nick, password=password)
+		return redirect('/')
 	else:
 		return redirect('/')
 
 
-# ===== HELPER FUNCTIONS =====
+@app.route('/logout')
+def logout(db):
+	nick = session_user(db)
+	delete_session(db, nick)
+	return redirect('/')
+
+
+# ===== HELPER METHODS =====
 
 def loginform_ornot(db):
 	name = session_user(db)
