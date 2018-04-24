@@ -75,7 +75,7 @@ def loginform_ornot(db):
 	else:
 		return("""
 			<form action="/login" id="loginform" method="POST">
-				<input type="text" name="nick" placeholder="Nickname"/>
+				<input type="text" name="nick" placeholder="Username"/>
 				<input type="password" name="password" placeholder="Password"/>
 				<input type='submit' value="Login"/>
 			</form>

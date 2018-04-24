@@ -173,10 +173,10 @@ nav form p {
     outline: none;
     box-shadow: 0px 5px 30px grey;
 
-    margin: auto 22.5% 100px;
+    margin: auto 25% 100px;
     /* padding: 20px 7.5% 20px 30px; */
     padding: 20px 2.5%;
-    width: 50%; /* change to 42.5% if padding = 7.5% */
+    width: 45%; /* change to 42.5% if padding = 7.5% */
     font-size: 16px;
 }
 
