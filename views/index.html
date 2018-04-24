@@ -1,7 +1,9 @@
 % rebase('base.html')
 <h1>{{message}}</h1>
 
-<input type="text" placeholder="Type some words about the job you want..."/>
+<input type="text" placeholder="Type some words about the job you want..." id="searchBar"/>
+
+{{ !job_post }}
 
 <h1 style="font-size: 20px; font-family: 'Merriweather';">MOST RECENT JOBS</h1>
 % if positions:

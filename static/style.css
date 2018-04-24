@@ -168,7 +168,7 @@ nav form p {
     margin-bottom: 30px;
 }
 
-#container input[type='text'] {
+#container #searchBar {
     border: none;
     border-radius: 3px;
     outline: none;
@@ -234,7 +234,7 @@ nav form p {
 
     background-color: #4834d4;
     outline: none;
-    /* border: 3px #cdcdcd solid; */
+    border: none;
 	border-radius: 3px;
 
     font-size: 14px;
@@ -291,4 +291,51 @@ nav form p {
 	padding-bottom: 50px;
 	text-align: center;
     color: #565656;
+}
+
+
+/* ======== NEW JOB CARD ======== */
+
+#postform {
+	padding-top: 10px;
+	padding-left: 3px;
+	margin: 0px;
+	width: 95%;
+}
+
+#postform input[type="text"], #postform textarea {
+	padding: 12px 10px;
+
+	background-color: rgba(0,0,0,0.1);
+
+	outline: none;
+	border: none;
+	border-radius: 3px;
+
+	font-size: 14px;
+}
+
+#postform .post_title {
+	width: 100%;
+}
+
+#postform .post_location, #postform .post_company {
+	margin: 10px 2px;
+	width: 46%;
+	float: left;
+}
+
+#postform .post_company {
+	margin-right: -20px;
+}
+
+#postform .post_location {
+	margin-left: 0px;
+	margin-right: 15px;
+}
+
+#postform .post_description {
+	width: 100%;
+	height: 150px;
+	resize: none;
 }

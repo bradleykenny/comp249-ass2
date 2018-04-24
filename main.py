@@ -18,6 +18,7 @@ def index(db):
         'message': 'Welcome to Jobs',
         'positions': position_list(db),
 		'log_in':  loginform_ornot(db),
+		'job_post': newjobform_ornot(db),
     }
     return template('index', info)
 
@@ -81,6 +82,24 @@ def loginform_ornot(db):
 				<input type='submit' value="Login"/>
 			</form>
 			""")
+
+def newjobform_ornot(db):
+	name = session_user(db)
+	if name != None:
+		return ("""
+			<h1 style="font-size: 20px; font-family: 'Merriweather';">POST A NEW JOB</h1>
+			<div class="card">
+				<form action="/post" id="postform">
+					<input type="text" name="title" placeholder="Title" class="post_title"/>
+					<input type="text" name="location" placeholder="Location" class="post_location"/>
+					<input type="text" name="company" placeholder="Company" class="post_company"/>
+					<textarea name="description" placeholder="Description" class="post_description"></textarea>
+					<input type='submit' value="Post" class="button"/>
+				</form>
+			</div>
+			""")
+	else:
+		return("")
 
 
 if __name__ == '__main__':
