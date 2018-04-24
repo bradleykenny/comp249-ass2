@@ -97,9 +97,6 @@ nav ul a {
     font-size: 14px;
 
 	text-transform: uppercase;
-
-    /* border-radius: 5px; */
-    /* border-bottom: 2px solid rgba(0,0,0,0.2); */
 }
 
 nav ul a:hover {
@@ -113,10 +110,10 @@ nav form {
 }
 
 nav form input[type="text"], nav form input[type="password"] {
-	margin-left: 7.5px;
+	margin-left: 5px;
 	padding: 7.5px 10px;
 
-	width: 100px;
+	width: 110px;
 
 	outline: none;
 	border: none;
@@ -126,7 +123,7 @@ nav form input[type="text"], nav form input[type="password"] {
 }
 
 nav form input[type="submit"] {
-	margin-left: 7.5px;
+	margin-left: 5px;
 	padding: 7.5px 15px;
 
 	outline: none;
@@ -139,6 +136,10 @@ nav form input[type="submit"] {
 	text-transform: uppercase;
 
 	cursor: pointer;
+}
+
+nav form input[type="submit"]:hover {
+	background-color: rgba(255,255,255,0.15);
 }
 
 nav form p {
@@ -175,8 +176,8 @@ nav form p {
 
     margin: auto 25% 100px;
     /* padding: 20px 7.5% 20px 30px; */
-    padding: 20px 2.5%;
-    width: 45%; /* change to 42.5% if padding = 7.5% */
+    padding: 20px 2%;
+    width: 46%; /* change to 42.5% if padding = 7.5% */
     font-size: 16px;
 }
 
@@ -195,6 +196,10 @@ nav form p {
     color: #4834d4;
     cursor: pointer;
 	padding-bottom: 5px;
+}
+
+.jobtitle:hover {
+	color: #3727A1;
 }
 
 .company {
@@ -222,7 +227,7 @@ nav form p {
 
 .card .button {
 	/* margin: auto auto; */
-    margin-top: 10px;
+    margin-top: 15px;
     padding: 10px 7px;
 	display: block;
 	width: 100px;
@@ -242,8 +247,7 @@ nav form p {
 }
 
 .card .button:hover {
-    background-color: #4834d4;
-    color: #fff;
+    background-color: #3727A1;
 }
 
 /* ======== ABOUT ======== */

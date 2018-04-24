@@ -22,7 +22,7 @@ def index(db):
     return template('index', info)
 
 
-@app.route('/about/')
+@app.route('/about')
 def about(db):
     info = {
         'title': 'Jobs | About',
@@ -39,6 +39,7 @@ def positions(db, id):
         'title': 'Jobs | %s' % position_get(db, int(id))[3],
         'message': 'Your next job?',
         'positions': position_get(db, int(id)),
+		'log_in': loginform_ornot(db),
     }
 	return template('position.html', info)
 
