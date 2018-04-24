@@ -125,7 +125,7 @@ nav form input[type="text"], nav form input[type="password"] {
 	font-size: 14px;
 }
 
-nav form input[type="button"] {
+nav form input[type="submit"] {
 	margin-left: 7.5px;
 	padding: 7.5px 15px;
 
@@ -139,6 +139,11 @@ nav form input[type="button"] {
 	text-transform: uppercase;
 
 	cursor: pointer;
+}
+
+nav form p {
+	display: inline;
+	color: white;margin-right: 10px;
 }
 
 /* ======== MAIN ======== */

@@ -10,6 +10,7 @@
 		<title>{{ title }}</title>
 		<link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Merriweather|Pacifico" rel="stylesheet">
 		<link type="text/css" rel="stylesheet" href="../static/style.css">
+		<link rel="icon" type="image/png" href="../static/img/favicon.ico">
 	</head>
 	<body>
 		<nav>
@@ -21,11 +22,16 @@
 		        <a href="#">Jobs</a>
 		        <a href="/about/">About</a>
 		    </ul>
-			<form action="">
-				<input type="text" placeholder="Username"/>
-				<input type="password" placeholder="Password"/>
-				<input type='button' value="Submit"/>
-			</form>
+			{{ !log_in }}
+			<!-- <form action="/login" id="loginform">
+				<input type="text" name="nick" placeholder="Nickname"/>
+				<input type="password" name="password" placeholder="Password"/>
+				<input type='button' value="Login"/>
+			</form> -->
+			<!-- <form action="/logout" id="loginform">
+				<p>Logged in as <i><b>Baloolaba</b></i></p>
+				<input type='button' value="Logout"/>
+			</form> -->
 		</nav>
 		<div id="container">
 			{{ !base }}

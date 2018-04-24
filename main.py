@@ -1,7 +1,8 @@
 __author__ = 'Bradley Kenny'
 
-from bottle import Bottle, template, static_file, request, response
+from bottle import Bottle, template, static_file, request, response, redirect
 from interface import *
+from users import *
 
 app = Bottle()
 
@@ -16,27 +17,62 @@ def index(db):
         'title': 'Welcome to Jobs',
         'message': 'Welcome to Jobs',
         'positions': position_list(db),
+		'log_in':  loginform_ornot(db),
     }
     return template('index', info)
 
 
 @app.route('/about/')
-def about():
+def about(db):
     info = {
         'title': 'Jobs | About',
         'message': 'About Us',
+		'log_in': loginform_ornot(db),
     }
     return template('about.html', info)
 
 
 @app.route('/positions/<id>')
 def positions(db, id):
+
 	info = {
         'title': 'Jobs | %s' % position_get(db, int(id))[3],
         'message': 'Your next job?',
         'positions': position_get(db, int(id)),
     }
 	return template('position.html', info)
+
+
+@app.route('/login/', method="POST")
+def formhandler(db):
+	nick = request.forms.get('nick')
+	password = request.forms.get('password')
+	if check_login(db, nick, password):
+		generate_session(db, nick)
+		return redirect('/', nick=nick, password=password)
+	else:
+		return redirect('/')
+
+
+# ===== HELPER FUNCTIONS =====
+
+def loginform_ornot(db):
+	name = session_user(db)
+	if name != None:
+		return ("""
+			<form action="/logout" id="logoutform">
+				<p>Logged in as <b><i>%s</i></b></p>
+				<input type='submit' value="Logout"/>
+			</form>
+			""" % name)
+	else:
+		return("""
+			<form action="/login" id="loginform" method="POST">
+				<input type="text" name="nick" placeholder="Nickname"/>
+				<input type="password" name="password" placeholder="Password"/>
+				<input type='submit' value="Login"/>
+			</form>
+			""")
 
 
 if __name__ == '__main__':
