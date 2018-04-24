@@ -15,6 +15,8 @@ COOKIE_NAME = 'sessionid'
 
 
 def check_login(db, usernick, password):
+	# checks for valid log in username and password
+	# returns true if password works for username, false for all else
 	cur = db.cursor()
 	cur.execute("SELECT * FROM users WHERE nick=?", (usernick,))
 	row = cur.fetchone()
@@ -25,6 +27,7 @@ def check_login(db, usernick, password):
 			return False
 
 def generate_session(db, usernick):
+	# creates session for usernick, returns None is usernick doesn't exist
 	cur = db.cursor()
 	cur.execute("SELECT * FROM users WHERE nick=?", (usernick,))
 	user_row = cur.fetchone()
