@@ -63,6 +63,20 @@ def logout(db):
 	return redirect('/')
 
 
+@app.route('/post', method="POST")
+def login(db):
+	user = session_user(db)
+	title = request.forms.get('title')
+	location = request.forms.get('location')
+	company = request.forms.get('company')
+	description = request.forms.get('description')
+	if user != None:
+		position_add(db, user, title, location, company, description)
+		return redirect('/')
+	else:
+		return redirect('/')
+
+
 # ===== HELPER METHODS =====
 
 def loginform_ornot(db):
@@ -70,7 +84,7 @@ def loginform_ornot(db):
 	if name != None:
 		return ("""
 			<form action="/logout" id="logoutform">
-				<p>Logged in as <b><i>%s</i></b></p>
+				<p>Logged in as %s</p>
 				<input type='submit' value="Logout"/>
 			</form>
 			""" % name)
@@ -88,8 +102,8 @@ def newjobform_ornot(db):
 	if name != None:
 		return ("""
 			<h1 style="font-size: 20px; font-family: 'Merriweather';">POST A NEW JOB</h1>
-			<div class="card">
-				<form action="/post" id="postform">
+			<div id="postform_card" class="card">
+				<form action="/post" id="postform" method="POST">
 					<input type="text" name="title" placeholder="Title" class="post_title"/>
 					<input type="text" name="location" placeholder="Location" class="post_location"/>
 					<input type="text" name="company" placeholder="Company" class="post_company"/>
