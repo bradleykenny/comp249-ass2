@@ -35,7 +35,6 @@ def about(db):
 
 @app.route('/positions/<id>')
 def positions(db, id):
-
 	info = {
         'title': 'Jobs | %s' % position_get(db, int(id))[3],
         'message': 'Your next job?',
@@ -96,6 +95,7 @@ def loginform_ornot(db):
 				<input type='submit' value="Login"/>
 			</form>
 			""")
+
 
 def newjobform_ornot(db):
 	name = session_user(db)
