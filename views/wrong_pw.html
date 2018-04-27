@@ -1,11 +1,11 @@
 % rebase('base.html')
 <h1>{{message}}</h1>
 
-<h1 style="font-size: 20px; font-family: 'Merriweather';">Login Failed, please try again</h1>
-<div id="postform_card" class="card">
-	<form action="/login" id="loginform" method="POST">
-		<input type="text" name="nick" placeholder="Username"/>
-		<input type="password" name="password" placeholder="Password"/>
-		<input type='submit' value="Login"/>
+<h1 style="font-size: 20px; font-family: 'Merriweather';" class="wrongpw_h1">Login Failed, please try again</h1>
+<div id="wrongpwform_card" class="card">
+	<form action="/login" id="wrongpwform" method="POST">
+		<input type="text" name="nick" placeholder="Username" class="wrongpw_field"/>
+		<input type="password" name="password" placeholder="Password" class="wrongpw_field"/>
+		<input type='submit' value="Login" class="button"/>
 	</form>
 </div>

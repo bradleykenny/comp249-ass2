@@ -308,7 +308,23 @@ nav form p {
 	width: 95%;
 }
 
-#postform input[type="text"], #postform textarea {
+#wrongpwform {
+	margin: 0px;
+	width: 280px;
+}
+
+#wrongpwform_card {
+	width: 300px;
+	margin: auto auto 75px;
+	padding-bottom: 35px;
+}
+
+.wrongpw_h1 {
+	text-transform: uppercase;
+}
+
+#postform input[type="text"], #postform textarea,
+#wrongpwform input[type="text"], #wrongpwform input[type="password"] {
 	padding: 12px 10px;
 
 	background-color: rgba(0,0,0,0.1);
@@ -320,7 +336,8 @@ nav form p {
 	font-size: 14px;
 }
 
-#postform .post_title {
+#postform .post_title,
+#wrongpwform .wrongpw_field {
 	margin-top: 15px;
 	width: 100%;
 }
