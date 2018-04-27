@@ -86,16 +86,16 @@ def loginform_ornot(db):
     if name != None:
         return ("""
             <form action="/logout" id="logoutform">
-            <p>Logged in as %s</p>
-            <input type='submit' value="Logout"/>
+                <p>Logged in as %s</p>
+                <input type='submit' value="Logout"/>
             </form>
             """ % name)
     else:
         return("""
             <form action="/login" id="loginform" method="POST">
-            <input type="text" name="nick" placeholder="Username"/>
-            <input type="password" name="password" placeholder="Password"/>
-            <input type='submit' value="Login"/>
+                <input type="text" name="nick" placeholder="Username"/>
+                <input type="password" name="password" placeholder="Password"/>
+                <input type='submit' value="Login"/>
             </form>
             """)
 
