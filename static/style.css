@@ -1,15 +1,7 @@
 /* CSS Stylesheet for the COMP249 Jobs Board */
 /* Author: Bradley Kenny / 45209723          */
 
-/*
-COLOUR SCHEME:
- - BLUE: #4834d4
- - GREEN: #6ab04c
- - RED: #eb4d4b
- - YELLOW: #f9ca24
- - PURPLE: #be2edd
- - TEAL: #22a6b3
-*/
+/* JOB|BOARD BLUE: #4834d4 */
 
 /* ======== COMMON ELEMENTS ======== */
 
@@ -20,7 +12,7 @@ html {
 
 body {
     width: 100vw;
-    margin: 0px;
+	margin: 0px;
     padding: 0px;
     padding-bottom: 150px;
 }
@@ -47,7 +39,6 @@ nav {
     width: 100%;
     padding: 5px 0px;
     position: fixed;
-
     box-shadow: 0px 5px 20px rgba(0,0,0,0.5);
 }
 
@@ -91,11 +82,9 @@ nav ul {
 nav ul a {
     padding: 10px 15px;
     margin-left: 8px;
-
     color: white;
     text-decoration: none;
     font-size: 14px;
-
 	text-transform: uppercase;
 }
 
@@ -112,31 +101,24 @@ nav form {
 nav form input[type="text"], nav form input[type="password"] {
 	margin-left: 5px;
 	padding: 7.5px 10px;
-
 	width: 110px;
-
 	outline: none;
 	border: none;
 	border-radius: 3px;
-
 	font-size: 14px;
 }
 
 nav form input[type="submit"] {
 	margin-left: 5px;
 	padding: 7.5px 15px;
-
 	outline: none;
 	border: none;
 	border-radius: 3px;
-
 	background-color: rgba(255,255,255,0.25);
 	color: white;
 	font-size: 14px;
 	text-transform: uppercase;
-
 	cursor: pointer;
-
 	transition: ease 0.2s;
 }
 
@@ -153,7 +135,6 @@ nav form p {
 
 #container {
     width: 90%;
-
     margin-top: 75px;
     padding: 25px 5%;
     float: left;
@@ -165,7 +146,6 @@ nav form p {
     font-weight: normal;
     font-size: 50px;
     color: #333;
-
     margin-bottom: 30px;
 }
 
@@ -174,22 +154,25 @@ nav form p {
     border-radius: 3px;
     outline: none;
     box-shadow: 0px 5px 30px rgba(0,0,0,0.5);
-
     margin: auto 25% 100px;
-    /* padding: 20px 7.5% 20px 30px; */
     padding: 20px 2%;
     width: 46%; /* change to 42.5% if padding = 7.5% */
     font-size: 16px;
-
-	transition: ease 0.2s;
 }
 
 #container #searchBar:hover,
 #container #searchBar:focus {
+	transition: ease 0.2s;
 	box-shadow: 0px 5px 40px rgba(0,0,0,0.6);
 }
 
-/* JOB CARDS */
+#recog {
+	padding-bottom: 20px;
+	text-align: center;
+    color: #565656;
+}
+
+/* ======== JOB CARDS ======== */
 
 .card {
     background-color: white;
@@ -220,10 +203,6 @@ nav form p {
     height: 12px;
 }
 
-.location, .time {
-    /* font-style: italic; */
-}
-
 .card div {
     margin: 0px auto;
 }
@@ -234,25 +213,19 @@ nav form p {
 }
 
 .card .button {
-	/* margin: auto auto; */
     margin-top: 15px;
     padding: 10px 7px;
 	display: block;
 	width: 100px;
-
     background-color: #4834d4;
     outline: none;
     border: none;
 	border-radius: 3px;
-
     font-size: 14px;
 	text-align: center;
     color: #fff;
-
     cursor: pointer;
-
 	text-transform: uppercase;
-
 	transition: ease 0.2s;
 }
 
@@ -260,7 +233,12 @@ nav form p {
 	box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
 }
 
-/* ======== ABOUT ======== */
+.mainPageCard .description p, .card .description h2 {
+	font-size: 16px;
+	text-align: justify;
+}
+
+/* ======== ABOUT PAGE ======== */
 
 .aboutImg {
     width: 110%;
@@ -292,19 +270,8 @@ nav form p {
     text-align: center;
 }
 
-.mainPageCard .description p, .card .description h2 {
-	font-size: 16px;
-	text-align: justify;
-}
 
-#recog {
-	padding-bottom: 20px;
-	text-align: center;
-    color: #565656;
-}
-
-
-/* ======== NEW JOB CARD ======== */
+/* ======== NEW JOB & WRONG PW CARDS ======== */
 
 #postform_card {
 	width: 500px;
@@ -336,13 +303,10 @@ nav form p {
 #postform input[type="text"], #postform textarea,
 .wrongpwform input[type="text"], .wrongpwform input[type="password"] {
 	padding: 12px 10px;
-
 	background-color: rgba(0,0,0,0.1);
-
 	outline: none;
 	border: none;
 	border-radius: 3px;
-
 	font-size: 14px;
 }
 

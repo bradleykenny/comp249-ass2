@@ -69,6 +69,16 @@ def login(db):
         return redirect('/')
 
 
+# called in login() when password incorrect
+def wrong_pw(db):
+    info = {
+        'title': 'Jobs | Wrong Password',
+        'message': 'Wrong Password',
+        'log_in': "",
+    }
+    return template('wrong_pw.html', info)
+
+
 @app.route('/logout')
 def logout(db):
     nick = session_user(db)
@@ -92,6 +102,8 @@ def post(db):
 
 # ===== HELPER METHODS =====
 
+# if the user is logged in, this returns the 'logoutform'
+# however, if no one is logged in, it will return a log in form
 def loginform_ornot(db):
     name = session_user(db)
     if name != None:
@@ -111,6 +123,8 @@ def loginform_ornot(db):
             """)
 
 
+# if someone is logged in, returns a form to create a new job
+# if no one is logged in, returns an empty string AKA nothing
 def newjobform_ornot(db):
     name = session_user(db)
     if name != None:
@@ -128,24 +142,6 @@ def newjobform_ornot(db):
             """)
     else:
         return("")
-
-def correct_username(db, usernick):
-    cur = db.cursor()
-    cur.execute("SELECT * FROM users WHERE nick=?", (usernick,))
-    row = cur.fetchone()
-    if row != None:
-        return True
-    else:
-        return False
-
-
-def wrong_pw(db):
-    info = {
-        'title': 'Jobs | Wrong Password',
-        'message': 'Wrong Password',
-        'log_in': "",
-    }
-    return template('wrong_pw.html', info)
 
 
 if __name__ == '__main__':
