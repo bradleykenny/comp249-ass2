@@ -51,6 +51,9 @@ def login(db):
 	if check_login(db, nick, password):
 		generate_session(db, nick)
 		return redirect('/')
+	elif correct_username(db, nick):
+		response.
+		return redirect('/wrong_password', 200)
 	else:
 		return redirect('/')
 
@@ -63,7 +66,7 @@ def logout(db):
 
 
 @app.route('/post', method="POST")
-def login(db):
+def post(db):
 	user = session_user(db)
 	title = request.forms.get('title')
 	location = request.forms.get('location')
@@ -74,6 +77,16 @@ def login(db):
 		return redirect('/')
 	else:
 		return redirect('/')
+
+
+@app.route('/wrong_password')
+def wrong_pw(db):
+    info = {
+        'title': 'Jobs | Wrong Password',
+        'message': 'Wrong Password',
+		'log_in': "",
+    }
+    return template('wrong_pw.html', info)
 
 
 # ===== HELPER METHODS =====
@@ -114,6 +127,15 @@ def newjobform_ornot(db):
 			""")
 	else:
 		return("")
+
+def correct_username(db, usernick):
+	cur = db.cursor()
+	cur.execute("SELECT * FROM users WHERE nick=?", (usernick,))
+	row = cur.fetchone()
+	if row != None:
+		return True
+	else:
+		return False
 
 
 if __name__ == '__main__':
