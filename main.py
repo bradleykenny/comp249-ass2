@@ -44,6 +44,17 @@ def positions(db, id):
     return template('position.html', info)
 
 
+@app.route('/all_positions')
+def all_positions(db):
+    info = {
+        'title': 'Jobs | All Positions',
+        'message': 'Available Jobs',
+        'positions': position_list_all(db),
+        'log_in': loginform_ornot(db),
+    }
+    return template('all_positions.html', info)
+
+
 @app.route('/login', method="POST")
 def login(db):
     nick = request.forms.get('nick')
@@ -62,7 +73,7 @@ def login(db):
 def logout(db):
     nick = session_user(db)
     delete_session(db, nick)
-    return redirect('/')
+    return redirect('/', 302)
 
 
 @app.route('/post', method="POST")

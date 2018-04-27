@@ -73,13 +73,13 @@ nav a {
 
 .job_logo {
     font-family: 'Merriweather';
+	font-size: 1em;
 }
 
 .board_logo {
     font-family: 'Grand Hotel';
-    font-size: 48px;
-    /* color: #4834d4; */
-    /* letter-spacing: -3px; */
+    font-size: 1.4em;
+	margin-right: 2px;
 }
 
 nav ul {
@@ -136,6 +136,8 @@ nav form input[type="submit"] {
 	text-transform: uppercase;
 
 	cursor: pointer;
+
+	transition: ease 0.2s;
 }
 
 nav form input[type="submit"]:hover {
@@ -151,7 +153,6 @@ nav form p {
 
 #container {
     width: 90%;
-    height: 1000px;
 
     margin-top: 75px;
     padding: 25px 5%;
@@ -179,6 +180,13 @@ nav form p {
     padding: 20px 2%;
     width: 46%; /* change to 42.5% if padding = 7.5% */
     font-size: 16px;
+
+	transition: ease 0.2s;
+}
+
+#container #searchBar:hover,
+#container #searchBar:focus {
+	box-shadow: 0px 5px 40px rgba(0,0,0,0.6);
 }
 
 /* JOB CARDS */
@@ -244,6 +252,8 @@ nav form p {
     cursor: pointer;
 
 	text-transform: uppercase;
+
+	transition: ease 0.2s;
 }
 
 .card .button:hover {
@@ -288,7 +298,7 @@ nav form p {
 }
 
 #recog {
-	padding-bottom: 50px;
+	padding-bottom: 20px;
 	text-align: center;
     color: #565656;
 }
@@ -308,7 +318,7 @@ nav form p {
 	width: 95%;
 }
 
-#wrongpwform {
+.wrongpwform {
 	margin: 0px;
 	width: 280px;
 }
@@ -324,7 +334,7 @@ nav form p {
 }
 
 #postform input[type="text"], #postform textarea,
-#wrongpwform input[type="text"], #wrongpwform input[type="password"] {
+.wrongpwform input[type="text"], .wrongpwform input[type="password"] {
 	padding: 12px 10px;
 
 	background-color: rgba(0,0,0,0.1);
@@ -337,7 +347,7 @@ nav form p {
 }
 
 #postform .post_title,
-#wrongpwform .wrongpw_field {
+.wrongpwform .wrongpw_field {
 	margin-top: 15px;
 	width: 100%;
 }

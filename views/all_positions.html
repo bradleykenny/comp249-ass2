@@ -1,0 +1,27 @@
+% rebase('base.html')
+<h1>{{message}}</h1>
+
+% if positions:
+    % for position in positions:
+	<div class="card mainPageCard">
+	    <div class="jobtitle">{{ !position[3] }}</div>
+	    <div class="company">
+	        <img src="static/img/company.png"/>
+	        {{ !position[5] }}
+	    </div>
+	    <div class="location">
+	        <img src="static/img/location.png"/>
+	        {{ !position[4] }}
+	    </div>
+		<div class="time">
+	        <img src="static/img/time.png"/>
+	        {{ !position[1] }}
+	    </div>
+		<hr>
+	    <div class="description">
+	        {{ !position[6][0:100] }}...
+	    </div>
+	    <a class="button" href="/positions/{{ !position[0] }}">Read More</a>
+	</div>
+    % end
+% end

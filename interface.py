@@ -24,6 +24,22 @@ def position_list(db, limit=10):
 	return result
 
 
+def position_list_all(db):
+	# return a list of ALL positions ordered by date
+	# returns a list of tuples  (id, timestamp, owner, title, location, company, description)
+	cursor = db.cursor()
+	# result is a 2d array: result[row][column]
+	# 0=id, 1=timestamp, 2=owner, 3=title, 4=location, 5=company, 6=description
+	cursor.execute("SELECT * FROM positions ORDER BY date(timestamp) desc")
+	rows = cursor.fetchall()
+
+	result = []
+	for row in rows:
+		result.append(row)
+
+	return result
+
+
 def position_get(db, id):
 	# return the details of the position with the given id
 	# or None if there is no position with this id
